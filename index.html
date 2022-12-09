@@ -21,7 +21,7 @@ class: center, middle
 
 &lt;img src="imagenes/logo_portada2.png" width="200" /&gt;
 
-## Implementation on R
+## Implementation in R
 
 ## Methodologies and Data Science for Statistical Production 
 
@@ -743,9 +743,12 @@ assess(est)
 ```
 
 ```
-##   sexo     stat        se    df     n          cv                 eval_n       eval_df    eval_cv    label
-## 1    1 35.81776 0.1320879 10701 86096 0.003687776 sufficient sample size sufficient df cv &lt;= 0.15 reliable
-## 2    2 38.88116 0.2030783 10818 99341 0.005223053 sufficient sample size sufficient df cv &lt;= 0.15 reliable
+##   sexo     stat        se    df     n          cv                 eval_n       eval_df    eval_cv
+## 1    1 35.81776 0.1320879 10701 86096 0.003687776 sufficient sample size sufficient df cv &lt;= 0.15
+## 2    2 38.88116 0.2030783 10818 99341 0.005223053 sufficient sample size sufficient df cv &lt;= 0.15
+##      label
+## 1 reliable
+## 2 reliable
 ```
 
 --
@@ -821,12 +824,12 @@ assess(est)
 ```
 
 ```
-##   sexo      stat          se   df     n         cv                 eval_n       eval_df prop_est eval_type
-## 1    1 0.1138937 0.002402195 9996 43998 0.02109156 sufficient sample size sufficient df   &lt;= 0.5   Eval SE
-## 2    2 0.1393067 0.004271094 9722 36841 0.03065964 sufficient sample size sufficient df   &lt;= 0.5   Eval SE
-##    quadratic       eval_se eval_cv    label
-## 1 0.02610701 admissible SE    &lt;NA&gt; reliable
-## 2 0.02985879 admissible SE    &lt;NA&gt; reliable
+##   sexo      stat          se   df     n         cv                 eval_n       eval_df prop_est
+## 1    1 0.1138937 0.002402195 9996 43998 0.02109156 sufficient sample size sufficient df   &lt;= 0.5
+## 2    2 0.1393067 0.004271094 9722 36841 0.03065964 sufficient sample size sufficient df   &lt;= 0.5
+##   eval_type  quadratic       eval_se eval_cv    label
+## 1   Eval SE 0.02610701 admissible SE    &lt;NA&gt; reliable
+## 2   Eval SE 0.02985879 admissible SE    &lt;NA&gt; reliable
 ```
 
 --
@@ -1469,7 +1472,7 @@ class: center, middle
 
 &lt;img src="imagenes/logo_portada2.png" width="200" /&gt;
 
-## Implementation on R
+## Implementation in R
 
 ## Methodologies and Data Science for Statistical Production 
 

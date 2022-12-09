@@ -22,7 +22,7 @@ class: center, middle
 
 <img src="imagenes/logo_portada2.png" width="200" />
 
-## Implementation on R
+## Implementation in R
 
 ## Methodologies and Data Science for Statistical Production 
 
@@ -1322,7 +1322,7 @@ class: center, middle
 
 <img src="imagenes/logo_portada2.png" width="200" />
 
-## Implementation on R
+## Implementation in R
 
 ## Methodologies and Data Science for Statistical Production 
 
