@@ -47,12 +47,12 @@ library(xaringanthemer)
 class: inverse, center, middle
 
 .pull-left[
-# Estándar de calidad en encuestas de hogares ONE Chile
+# Estándar de calidad en encuestas de hogares INE Chile
 ]
 
 
 .pull-right[
-# Quality criteria for household surveys ONE Chile
+# Quality criteria for household surveys INE Chile
 ]
 
 
