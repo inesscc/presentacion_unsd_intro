@@ -26,7 +26,7 @@ class: center, middle
 
 ## Methodologies and Data Science for Statistical Production 
 
-## NSO Chile
+## INE Chile
 
 ### December 2022
 
@@ -66,12 +66,19 @@ background-position: 100% 0%
 
 # Demostración (Demonstration)
 
-.center[
-.red[
-**Warning**
-]
+.pull-left[
+
+**Antes de comenzar...**
 ]
 
+
+.pull-right[
+
+**Before starting...**
+
+]
+
+--
 
 .pull-left[
 Para seguir la demostración en tu computador, es necesario contar con un nivel básico de `R`
@@ -212,6 +219,8 @@ casen_edit <- casen %>%
 
 ```
 
+
+--
 
 .pull-left[
 
@@ -439,7 +448,7 @@ No olvidar que **subpop debe ser dummy**
 ]
 
 .pull-right[
-Do not forget that *subpop must be a dummy variable*
+Do not forget that **subpop must be a dummy variable**
 ]
 
 --
@@ -835,7 +844,7 @@ To know if a chart can be published, we can use the `publish` parameter
 est <-  create_size(var = "desocupado", subpop = "fdt", domains = "region+sexo", design = dc)
 assess(est, publish = T) %>% 
   select(region, sexo, stat, label, publication, pass) %>% 
-  slice(1:6)
+  slice(1:4)
 ```
 
 --
@@ -856,6 +865,31 @@ We have 2 new columns
 
 ]
 
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Evaluación de la calidad (quality assessment)
+
+.pull-left[
+Podemos generar una visualización sencilla mediante la función `create_html`
+]
+
+.pull-right[
+
+We can get a simple visualization using `create_html`
+
+]
+
+
+```{r}
+create_size(var = "desocupado", subpop = "fdt", domains = "region+sexo+pobreza", design = dc) %>%
+  assess( publish = T) %>% 
+  slice(1:3) %>% 
+  create_html( ) #<<
+```
 
 
 
@@ -1091,7 +1125,7 @@ Podemos hacer lo mismo, utilizando el paquete `purrr` (mucho más recomendado qu
 ]
 
 .pull-right[
-We can do exactly the same using a functional from `purrr` package (much better option than for loop) 
+We can do exactly the same using a functional approach from `purrr` package (much better option than for loop) 
 ]
 
 
@@ -1102,6 +1136,56 @@ insumos <- map_df(c("edad", "ing_aut_hog"), ~create_mean(var = .x, domains = "se
 ```
 
 
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Funciones (functions)
+
+.pull-left[
+El paquete `survey` funciona con evaluaciones no estándar
+
+Esto es muy útil porque permite una sintaxis compacta, pero requiere que el usuario conozca un poco el funcionamiento de R 
+
+]
+
+.pull-right[
+`survey` package works with Non Standard Evaluations (NSE)
+
+This is very useful because it allows for a compact syntax, but requires the user to know about how R works 
+
+]
+
+```{r, eval=F}
+svyby(~edad, design = dc, by = ~sexo, FUN = svymean) 
+
+```
+
+--
+
+.pull-left[
+Veamos cómo crear una función con el paquete `calidad` 
+]
+
+
+.pull-right[
+Let's see how to create a function using `calidad`
+]
+
+```{r, eval=T}
+
+create_and_assess <- function(var, dom, dc) {
+  create_mean(var, domains = dom, design = dc ) %>% 
+    assess() %>% 
+    select(dom, stat, n, df)
+}
+create_and_assess("edad", "sexo", dc)
+
+
+```
+
 
 
 ---
@@ -1109,14 +1193,14 @@ background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
 
-# ¿En qué estamos? (What are we doing now)
+# ¿En qué estamos? (What are we doing now?)
 
 .pull-left[
 * Mantenimiento constante
 
 * Junto a CEPAL estamos preparando instancias de difusión:
   + RTC 
-  + Intersecretariat Working Group on Household Surveys (aquí estamos)
+  + UNSD (aquí estamos)
   
 * Preparación de material de difusión 
 
@@ -1129,8 +1213,62 @@ background-position: 100% 0%
 
 .pull-right[
 
-* Constant mainta
- 
+* Constant maintenance
+
+* Together with ECLAC we are preparing dissemination instances:
+  + PSTN
+  + UNSD (here we are)
+  
+* Preparation of dissemination material
+
+* Integration of `calidad` with `inedata`
+
+* Start of new developments 
+]
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Desarrollo open source 
+
+## Open source development
+
+.pull-left[
+El paquete `calidad` es un desarrollo completamente *open source* 
+
+En este [repositorio de github](https://github.com/inesscc/calidad) pueden proponer nuevos desarrollos
+
+]
+
+.pull-right[
+
+The `calidad` package is a completely *open source* development
+
+In this [github repository](https://github.com/inesscc/calidad) you can propose new developments
+
+]
+
+--
+
+.pull-left[
+Klaus Lehmann y Ricardo Pizarro son los mantenedores 
+]
+
+.pull-right[
+The maintainers are Klaus Lehmann y Ricardo Pizarro
+]
+
+--
+
+.pull-left[
+Pueden generar *issues* o nuevas ramas de desarrollo 
+]
+
+.pull-right[
+You can create issues or new dev branches
 ]
 
 ---
@@ -1141,23 +1279,20 @@ background-position: 100% 0%
 
 # Desarrollo open source
 
-El paquete `calidad` es un desarrollo completamente *open source* 
+## Open source development
 
---
 
-En este [repositorio de github](https://github.com/inesscc/calidad) pueden proponer nuevos desarrollos
-
---
-
-Klaus Lehmann y Ricardo Pizarro son los mantenedores 
-
---
-
-Pueden generar *issues* o nuevas ramas de desarrollo 
-
---
-
+.pull-left[
 Si tienen **propuestas de mejora, reportes de errores o nuevos desarrollos**, estaremos felices de revisarlo e incorporarlo al paquete  
+
+]
+
+
+.pull-right[
+
+If you have **improvement proposals, bug reports or new developments**, we will be happy to review it and incorporate it into the package
+
+]
 
 .center[
 ### 😄😄😄😄😄
@@ -1178,15 +1313,6 @@ Si tienen **propuestas de mejora, reportes de errores o nuevos desarrollos**, es
 
 
 
-
-
-agregar ejemplo total y size
-
-agregar cómo construir una función
-
-
-
-
 ---
 
 class: center, middle
@@ -1196,10 +1322,10 @@ class: center, middle
 
 <img src="imagenes/logo_portada2.png" width="200" />
 
-## Presentación librería calidad
+## Implementation on R
 
-## Proyecto Estratégico Metodología y Ciencia de Datos para la Producción Estadística 
+## Methodologies and Data Science for Statistical Production 
 
-## Subdirección Técnica
+## INE Chile
 
-### Octubre 2022
+### December 2022

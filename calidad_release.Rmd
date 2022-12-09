@@ -529,6 +529,92 @@ The idea was to create a tool capable of:
 
 ---
 
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Open source
+
+.pull-left[
+
+- Problemas similares en ONEs y organismos públicos
+- Herramientas open source pueden ayudar
+
+]
+
+.pull-right[
+
+- Similar problems in ONEs and goverment organizations
+- Open source tools can be very helpful
+
+]
+
+--
+
+
+.pull-left[
+
+- Empoderamiento de la comunidad ligada a las estadísticas oficiales
+
+* En Europa existe una comunidad desde hace algunos años 
+  + [uRos](https://r-project.ro/about_uRos.html) (ligada a R)
+  + [Awesome official statistics software](https://github.com/SNStatComp/awesome-official-statistics-software) (R, python, Java, C++)
+
+]
+
+.pull-right[
+- Empowerment of the community linked to official statistics
+
+* In Europe there has been a community for some years 
+  + [uRos](https://r-project.ro/about_uRos.html) (related to R)
+  + [Awesome official statistics software](https://github.com/SNStatComp/awesome-official-statistics-software) (R, python, Java, C++)
+]
+
+
+--
+
+.pull-left[
+- En América Latina la comunidad es aún incipiente
+- Desde hace poco existe un repositorio llamado ["Asombrosos paquetes de R en Latinoamérica"](https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica)   
+
+]
+
+
+.pull-right[
+
+- In Latin America the community is still incipient
+- Recently there is a repository called ["Amazing R packages in Latin America"](https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica)
+
+]
+
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Open source 
+
+.pull-left[
+
+Las dinámicas open source son ideales para la colaboración a distancia
+
+Las oficinas de estadística pueden trabajar unidas para resolver problemas comunes
+
+]
+
+.pull-right[
+
+Open source dynamics are ideal for remote collaboration
+
+Statistical offices can work together to solve common problems
+
+]
+
+
+
+---
 
 class: center, middle
 
