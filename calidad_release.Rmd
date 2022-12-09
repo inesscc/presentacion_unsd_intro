@@ -266,6 +266,44 @@ Flowchart for quality assessment
 
 **Categories: Reliable, weakly reliable and non-reliable**
 
+
+---
+
+background-image: url("imagenes/fondo2.PNG")
+background-size: contain;
+background-position: 100% 0%
+
+# Estándar INE Chile (INE Chile standard)
+
+.pull-left[
+La segunda etapa consiste en la evaluación global de un cuadro estadístico
+
+]
+
+.pull-right[
+
+The second stage consists of the global evaluation of a statistical table
+
+]
+
+--
+
+.pull-left[
+
+Si el 50% de las celdas tiene categoría fiable, se puede publicar
+
+]
+
+
+.pull-right[
+
+If 50% of the cells have a reliable category, it can be published
+
+]
+
+
+
+
 ---
 
 background-image: url("imagenes/fondo2.PNG")
